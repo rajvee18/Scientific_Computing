@@ -6,13 +6,13 @@ n=int(input("enter the size of the matrix"))
 A = np.zeros((n,n), dtype=float)
 b=np.zeros((n),dtype=float)
 x=np.zeros((n),dtype=float)
-
+l=np.eye(n)
 for i in range(n):
     for j in range(n):
         A[i,j] = float(input("enter the element rowwise:"))
 
-for i in range(n):
-    b[i]=float(input("enter the values for the b matrix rowwise: "))
+'''for i in range(n):
+    b[i]=float(input("enter the values for the b matrix rowwise: "))'''
 
 for k in range(n):
     pivot = A[k,k]
@@ -23,8 +23,7 @@ for k in range(n):
         m = A[i,k]/pivot
         A[i,k:n] = A[i,k:n]-m*A[k,k:n]  
         b[i]=b[i]-m*b[k]
-for i in range(n-1,-1,-1):
-    x[i]=(b[i]-np.dot(A[i,i+1:],x[i+1:]))/A[i,i]
+        l[i,k]=m
 
-
-print(x)
+print(A)
+print(l)
