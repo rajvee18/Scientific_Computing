@@ -19,7 +19,7 @@ def SVD(A):
     singular_values = np.sqrt(eign_values)
     sigma=np.zeros((A.shape[0],A.shape[1]))
     sigma = np.diag(singular_values)
-
+    
     V = eign_vectors.T
     U=np.zeros((A.shape[0],len(singular_values)))
     for i,s in enumerate(singular_values):
