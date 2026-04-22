@@ -11,8 +11,7 @@ for i in range(n):
     for j in range(n):
         A[i,j] = float(input("enter the element rowwise:"))
 
-'''for i in range(n):
-    b[i]=float(input("enter the values for the b matrix rowwise: "))'''
+
 
 for k in range(n):
     pivot = A[k,k]
